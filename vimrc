@@ -17,6 +17,7 @@ augroup END
 " but it can be set to force 256 colors
 " set t_Co=256
 if has('gui_running')
+    set background=light
     colorscheme solarized
     let g:lightline = {'colorscheme': 'solarized'}
 elseif &t_Co < 256
@@ -164,12 +165,6 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-try
-    colorscheme desert
-catch
-endtry
-
-set background=dark
 
 " Set extra options when running in GUI mode
 if has("gui_running")
