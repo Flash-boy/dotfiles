@@ -26,3 +26,18 @@
 [submodule "vim/pack/vendor/start/lightline.vim"]
 	path = vim/pack/vendor/start/lightline.vim
 	url = https://github.com/itchyny/lightline.vim
+[submodule "vim/pack/vendor/start/supertab"]
+	path = vim/pack/vendor/start/supertab
+	url = https://github.com/ervandew/supertab
+[submodule "vim/pack/vendor/start/syntastic"]
+	path = vim/pack/vendor/start/syntastic
+	url = https://github.com/scrooloose/syntastic
+[submodule "vim/pack/vendor/start/incsearch.vim"]
+	path = vim/pack/vendor/start/incsearch.vim
+	url = https://github.com/haya14busa/incsearch.vim
+[submodule "vim/pack/vendor/start/vim-easymotion"]
+	path = vim/pack/vendor/start/vim-easymotion
+	url = https://github.com/easymotion/vim-easymotion
+[submodule "vim/pack/vendor/start/incsearch-easymotion.vim"]
+	path = vim/pack/vendor/start/incsearch-easymotion.vim
+	url = https://github.com/haya14busa/incsearch-easymotion.vim

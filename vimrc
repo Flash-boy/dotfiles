@@ -58,7 +58,7 @@ set laststatus=2 " Always show the status line
 set backspace=eol,start,indent " allow backspacing over everything
 set timeout timeoutlen=1000 ttimeoutlen=100 " fix slow 0 inserts
 set lazyredraw " Don't redraw while executing macros (good performance config)
-set autochdir " automatically set current directory to directory of last opened file
+"set autochdir " automatically set current directory to directory of last opened file
 set hidden " A buffer becomes hidden when it is abandoned
 set history=8192 " Sets how many lines of history VIM has to remember
 set joinspaces "suppress inserting two space between sentence
@@ -209,6 +209,35 @@ if executable('ag')
     let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
     let g:ackprg = 'ag --vimgrep'
 endif
+
+" syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = {
+    \ 'mode': 'passive',
+    \ 'active_filetypes': [],
+    \ 'passive_filetypes': []
+\}
+
+nnoremap <leader>s :SyntasticCheck<CR>
+nnoremap <leader>r :SyntasticReset<CR>
+nnoremap <leader>i :SyntasticInfo<CR>
+nnoremap <leader>m :SyntasticToggleMode<CR>
+
+" easymotion
+map ss <Plug>(easymotion-s2)
+map <Space> <Plug>(easymotion-prefix)
+
+" incsearch
+map / <Plug>(incsearch-forward)
+map ? <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+" incsearch-easymotion
+map z/ <Plug>(incsearch-easymotion-/)
+map z? <Plug>(incsearch-easymotion-?)
+map zg/ <Plug>(incsearch-easymotion-stay)
 
 "-----------------
 " Helper functions
