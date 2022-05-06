@@ -41,3 +41,9 @@
 [submodule "vim/pack/vendor/start/incsearch-easymotion.vim"]
 	path = vim/pack/vendor/start/incsearch-easymotion.vim
 	url = https://github.com/haya14busa/incsearch-easymotion.vim
+[submodule "vim/pack/vendor/start/nerdcommenter"]
+	path = vim/pack/vendor/start/nerdcommenter
+	url = https://github.com/preservim/nerdcommenter.git
+[submodule "vim/pack/vendor/vim-buffergator"]
+	path = vim/pack/vendor/vim-buffergator
+	url = https://github.com/jeetsukumaran/vim-buffergator.git
