@@ -27,19 +27,18 @@ else
     set background=dark
     let g:solarized_termcolors=256 " instead of 16 color with mapping in terminal
     colorscheme solarized
+    let g:lightline = {'colorscheme': 'dark'}
     " customized colors
     highlight SignColumn ctermbg=234
     highlight StatusLine cterm=bold ctermfg=245 ctermbg=235
     highlight StatusLineNC cterm=bold ctermfg=245 ctermbg=235
-    let g:lightline = {'colorscheme': 'dark'}
     highlight SpellBad cterm=underline
     " patches
     highlight CursorLineNr cterm=NONE
 endif
 
 " Enable filetype plugins
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 set autoindent
 
 "---------------------
@@ -130,12 +129,15 @@ nmap w- :resize -3<CR>
 nmap w, :vertical resize -3<CR>
 nmap w. :vertical resize +3<CR>
 
-
 " toggle relative numbering
 nnoremap <C-n> :set rnu!<CR>
 
 let mapleader = ","
 nmap <leader>w :w!<cr>  
+
+" tab move 
+nmap <leader>h :tabp<CR>
+nmap <leader>l :tabn<CR>
 
 set tags=tags; " ctags config
 
@@ -156,23 +158,6 @@ set vb t_vb=
 " Add a bit extra margin to the left
 set foldcolumn=1
 
-"-----------------
-" Colors and Fonts
-"-----------------
-
-" Enable 256 colors palette in Gnome Terminal
-if $COLORTERM == 'gnome-terminal'
-    set t_Co=256
-endif
-
-
-" Set extra options when running in GUI mode
-if has("gui_running")
-    set guioptions-=T
-    set guioptions-=e
-    set t_Co=256
-    set guitablabel=%M\ %t
-endif
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -181,20 +166,13 @@ set encoding=utf8
 set ffs=unix,dos,mac
 
 
-"-------------------
-" Status line config 
-"-------------------
-
-" Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
-
-
 "----------------------
 " Plugin configurations 
 "----------------------
 
 " nerdtree
-map <silent> <C-e> :NERDTreeToggle<CR>
+nnoremap <C-e> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 " ctrlp
 nnoremap ; :CtrlPBuffer<CR>

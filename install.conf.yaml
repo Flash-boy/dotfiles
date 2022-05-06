@@ -11,6 +11,7 @@
     ~/.bashrc: bashrc
     ~/.dotfiles: ''
     ~/.gitconfig: gitconfig
+    ~/.gitignore_global: gitignore_global
     ~/.shell: shell/
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim/
