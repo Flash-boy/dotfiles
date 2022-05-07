@@ -178,6 +178,12 @@ nnoremap <C-f> :NERDTreeFind<CR>
 let g:buffergator_suppress_keymaps = 1
 nnoremap <Leader>b :BuffergatorToggle<CR>
 
+" gundo
+nnoremap <Leader>u :GundoToggle<CR>
+if has('python3')
+    let g:gundo_prefer_python3 = 1
+endif
+
 " ctrlp
 nnoremap ; :CtrlPBuffer<CR>
 let g:ctrlp_switch_buffer = 0
@@ -185,12 +191,15 @@ let g:ctrlp_show_hidden = 1
 
 
 " ag / ack.vim
-command -nargs=+ Gag Gcd | Ack! <args>
+command -nargs=+ Gag Ack! <args>
 nnoremap K :Gag "\b<C-R><C-W>\b"<CR>:cw<CR>
 if executable('ag')
     let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
     let g:ackprg = 'ag --vimgrep'
 endif
+
+" tagbar
+nnoremap <leader>t :TagbarToggle<CR>
 
 " syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -220,6 +229,15 @@ map g/ <Plug>(incsearch-stay)
 map z/ <Plug>(incsearch-easymotion-/)
 map z? <Plug>(incsearch-easymotion-?)
 map zg/ <Plug>(incsearch-easymotion-stay)
+
+" fugitive
+set tags^=.git/tags;~
+
+" local customizations in ~/.vimrc_local
+let $LOCALFILE=expand("~/.vimrc_local")
+if filereadable($LOCALFILE)
+    source $LOCALFILE
+endif
 
 "-----------------
 " Helper functions
