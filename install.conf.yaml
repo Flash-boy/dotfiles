@@ -2,6 +2,9 @@
     link: 
       create: true
       relink: true
+    shell: 
+      stdout: true
+      stderr: true
 
 - clean: ['~', '~/.config']      
   
@@ -21,9 +24,10 @@
 
 
 - shell: 
+  - sudo apt install git vim tmux zsh 
   - git submodule sync --recursive
   # the following have to run after linking ~/.gitconfig
-  - git update-submodules
+  - git update-submodules 
   - >
     git cleanall -f
     shell/plugins/
