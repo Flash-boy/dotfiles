@@ -24,7 +24,6 @@
 
 
 - shell: 
-  - sudo apt install git vim tmux zsh 
   - git submodule sync --recursive
   # the following have to run after linking ~/.gitconfig
   - git update-submodules 
